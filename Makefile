@@ -22,20 +22,20 @@ PDIR	= ./includes/ft_printf/
 PLIB	= libftprintf.a
 
 # Compiler and shell scripts
-CC		= cc
+CC	= cc
 CFLAGS	= -Wall -Wextra -Werror
-AR		= ar rcs
-RM		= rm -f
+AR	= ar rcs
+RM	= rm -f
 
 # Source files
 SRCDIR	= ./src/
-SRC		= check_args.c ft_split.c list_utils.c moves.c multiples_argv.c push_swap.c \
+SRC	= check_args.c ft_split.c list_utils.c moves.c multiples_argv.c push_swap.c \
 			pushswap3.c pushswap5.c pushswap100.c pushswap500.c single_argv.c \
 			sort_stack.c sort_stack2.c str_to_number.c utils.c
 
 # Object files
-#OBJ		= $(SRCDIR)$(SRC:.c=.o)
-OBJ		= $(addprefix $(SRCDIR), $(SRC:.c=.o))
+#OBJ	= $(SRCDIR)$(SRC:.c=.o)
+OBJ	= $(addprefix $(SRCDIR), $(SRC:.c=.o))
 
 # --- Bonus --- #
 # Executable file
@@ -50,9 +50,9 @@ SRC_G	= get_next_line.c get_next_line_utils.c
 OBJ_G	= $(addprefix $(GDIR), $(SRC_G:.c=.o))
 
 # Checker path
-SRC_BONUS		= check_moves.c checker.c
+SRC_BONUS	= check_moves.c checker.c
 SRC_BONUS_PATH	= ./srcbonus/
-SRC_COMP		= $(addprefix $(SRC_BONUS_PATH), $(SRC_BONUS))
+SRC_COMP	= $(addprefix $(SRC_BONUS_PATH), $(SRC_BONUS))
 
 # Target and rules
 all: $(PSLIB) $(PLIB)
@@ -85,4 +85,4 @@ fclean: clean
 		make -C $(PDIR) fclean
 		$(RM) $(BINARY) $(CHECKER)
 
-re: fclean all
+re: fclean all bonus
